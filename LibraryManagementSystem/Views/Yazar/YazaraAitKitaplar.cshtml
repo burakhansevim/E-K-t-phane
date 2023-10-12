@@ -1,0 +1,26 @@
+﻿@using LibraryManagementSystem.Models.Entity;
+@model List<TBLKITAP>
+@{
+    ViewBag.Title = "YazaraAitKitaplar";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>İlgili Kitap Yazarı: @ViewBag.yazar1</h2>
+<br />
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Kitap İsmi</th>
+        <th>Kitap Kategorisi</th>
+        <th>İlgili Yayınevi</th>
+    </tr>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@data.ID</td>
+            <td>@data.AD</td>
+            <td>@data.KATEGORI</td>
+            <td>@data.YAYINEVI</td>
+        </tr>
+    }
+</table>

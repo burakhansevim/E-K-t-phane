@@ -1,0 +1,28 @@
+﻿@using LibraryManagementSystem.Models.Entity
+@model List<TBLHAREKET>
+@{
+    ViewBag.Title = "UyeAlınanKitap";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Üye: @ViewBag.uyeAdSoyad</h2>
+<br />
+
+<table class="table table-danger">
+    <tr>
+        <th>Kitap İsmi</th>
+        <th>İlgili Personel</th>
+        <th>Teslim Alınan Tarih</th>
+        <th>Teslim Edilen Tarih</th>
+    </tr>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@data.TBLKITAP.AD</td>
+            <td>@data.TBLPERSONEL.PERSONEL</td>
+            <td>@Convert.ToDateTime(data.ALISTARIH).ToString("MM/dd/yyyy")</td>
+            <td>@Convert.ToDateTime(data.UYEGETIRTARIH).ToString("MM/dd/yyyy")</td>
+        </tr>
+    }
+</table>
+

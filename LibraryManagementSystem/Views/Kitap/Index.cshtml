@@ -1,0 +1,63 @@
+﻿@using LibraryManagementSystem.Models.Entity
+@model List<TBLKITAP>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Kitaplar</h2>
+
+@using (Html.BeginForm("Index", "Kitap", FormMethod.Get))
+{
+    //kitap arama işlemi
+<div style="margin-top:15px; margin-bottom:15px;">
+    <b id="text">aranacak kitap ismini giriniz: </b> @Html.TextBox("parametre")
+    <button id="button" class="btn btn-info" value="Ara">ara</button>
+    @*<input type="submit" value="Ara" />*@
+    <style>
+        #button {
+            background-color: #9932CC;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            cursor: pointer;
+        }
+    </style>
+</div>
+}
+
+
+<table class="table table-bordered">
+    <tr style="background-color: #DDA0DD">
+        <th>ID</th>
+        <th>Kitap Adı</th>
+        <th>Kitap Yazarı</th>
+        <th>Kitap Kategorisi</th>
+        <th>Kitap Basım Tarihi</th>
+        <th>İlgili Yayınevi</th>
+        <th>İlgili Kitabın Sayfa Sayısı</th>
+        <th>İlgili Kitabın Durumu</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var kitap in Model)
+    {
+        <tr>
+            <td>@kitap.ID</td>
+            <td>@kitap.AD</td>
+            <td>@kitap.TBLYAZAR.AD @kitap.TBLYAZAR.SOYAD</td>
+            <td>@kitap.TBLKATEGORI.AD</td>
+            <td>@kitap.BASIMYIL</td>
+            <td>@kitap.YAYINEVI</td>
+            <td>@kitap.SAYFA</td>
+            <td>@kitap.DURUM</td>
+            <td>
+                <a href="/Kitap/KitapSil/@kitap.ID" class="btn btn-danger">Sil</a>
+                <a href="/Kitap/KitapGetir/@kitap.ID" class="btn btn-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Kitap/YeniKitapEkle" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Kitap </a>

@@ -1,0 +1,69 @@
+﻿@using LibraryManagementSystem.Models.Entity
+@model List<TBLADMIN>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+
+<!-- JQuery -->
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<!-- Bootstrap -->
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kullanıcı Adı</th>
+        <th>Yetki</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.KULLANICIADI</td>
+            <td>@item.YETKI</td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Ayarlar/AdminGuncelle/@item.ID">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Düzenle
+                </a>
+                <a class="btn btn-danger btn-sm" href="/Ayarlar/AdminSil/@item.ID">
+                    <i class="fas fa-trash">
+                    </i>
+                    Sil
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<button class="btn btn-success" data-toggle="modal" data-target="#Modal1">
+    <i class="fas fa-plus"></i> Admin Ekle
+</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Yeni Admin Ekle</h2>
+            </div>
+            <form method="post" action="/Ayarlar/AdminEkle">
+                <div class="modal-body">
+                    <label style="margin-top:10px;">Kullanıcı Adı</label>
+                    <input style="margin-top:10px;" type="text" name="KULLANICIADI" class="form-control" />
+                    <label style="margin-top:10px;">Şifre</label>
+                    <input style="margin-top:10px;" type="password" name="SIFRE" class="form-control" />
+                    <label style="margin-top:10px;">Yetki</label>
+                    <input style="margin-top:10px;" type="text" name="YETKI" class="form-control" />
+                    <button style="margin-top:10px;" class="btn btn-success">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

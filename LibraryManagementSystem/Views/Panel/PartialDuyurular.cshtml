@@ -1,0 +1,18 @@
+﻿@using LibraryManagementSystem.Models.Entity
+@model List<TBLDUYURULAR>
+@foreach (var item in Model)
+{
+    <div class="post">
+        <div class="user-block">
+            <img class="img-circle img-bordered-sm" src="~/AdminLTE-3.0.4/dist/img/2.png" alt="user image">
+            <span class="username">
+                <a href="#">@item.KATEGORI</a>
+                <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+            </span>
+            <span class="description">@item.TARIH.ToString()</span>
+        </div>
+        <p>
+            @item.ICERIK
+        </p>
+    </div>
+}

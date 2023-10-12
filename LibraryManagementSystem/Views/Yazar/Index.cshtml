@@ -1,0 +1,36 @@
+﻿@using LibraryManagementSystem.Models.Entity
+@model List<TBLYAZAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazarlar</h2>
+
+<table class="table table-striped">
+    <tr style="background-color: #DDA0DD">
+        <th>ID Değeri</th>
+        <th>İsim</th>
+        <th>Soyisim</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var yazar in Model)
+    {
+        <tr>
+            <td>@yazar.ID</td>
+            <td>@yazar.AD</td>
+            <td>@yazar.SOYAD</td>
+        <td>
+            @*kullanıcıya js alert olarak göstermek için*@ 
+            @Html.ActionLink("Sil", "YazarSil", new { id = yazar.ID },
+                new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinizden emin misiniz?')" })
+
+            @*<a href="/Yazar/YazarSil/@yazar.ID" class="btn btn-danger">Sil</a>*@
+            <a href="/Yazar/YazarGetir/@yazar.ID" class="btn btn-warning">Güncelle</a>
+            <a href="/Yazar/YazaraAitKitaplar/@yazar.ID" class="btn btn-info">Yazarın Diğer Kitapları</a>
+        </td>
+
+        </tr>
+    }
+</table>
+<a href="/Yazar/YeniYazarEkle" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Yazar </a>

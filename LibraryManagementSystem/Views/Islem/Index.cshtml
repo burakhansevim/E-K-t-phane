@@ -1,0 +1,36 @@
+﻿@using LibraryManagementSystem.Models.Entity
+@model List<TBLHAREKET>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Teslim Edilen Kitap Listesi</h2>
+
+<table class="table table-bordered">
+    <tr style="background-color: #DDA0DD">
+        <th>İşlem ID</th>
+        <th>Kitap Adı</th>
+        <th>Üye</th>
+        <th>Personel</th>
+        <th>Emanet Tarihi</th>
+        <th>Üyenin Teslim Tarihi</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var hareket in Model)
+    {
+        <tr>
+            <td>@hareket.ID</td>
+            <td>@hareket.TBLKITAP.AD</td>
+            <td>@hareket.TBLUYELER.AD @hareket.TBLUYELER.SOYAD</td>
+            <td>@hareket.TBLPERSONEL.PERSONEL</td>
+            <td>@Convert.ToDateTime(hareket.ALISTARIH).ToString("MM/dd/yyyy")</td>
+            <td>@Convert.ToDateTime(hareket.UYEGETIRTARIH).ToString("MM/dd/yyyy")</td>
+            <td>
+                <a href="/Emanet/KitapTeslim/@hareket.ID" class="btn btn-default"
+                   style="background-color:deeppink; color: white; "
+                   onMouseOver="this.style.color='white'">Detay Görüntüle</a>
+            </td>
+        </tr>
+    }
+</table>

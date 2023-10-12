@@ -1,0 +1,20 @@
+﻿@model LibraryManagementSystem.Models.Entity.TBLPERSONEL
+@{
+    ViewBag.Title = "YeniPersonelEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label style="margin-top:15px">Personel Adı</label>
+        @*<input type="text" class="form-control" name="PERSONEL" />*@
+
+        @*html helper ve method biçimli LINQ ile annotation olarak değere verdiğimiz uyarı mesajını kullanıcıya göstermek için*@
+        @Html.TextBoxFor(x => x.PERSONEL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PERSONEL, "", new { @style = "color:red" })
+
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Ekle</button>
+    </div>
+</form>

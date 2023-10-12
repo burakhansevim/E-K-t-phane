@@ -1,0 +1,39 @@
+﻿@using LibraryManagementSystem.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TBLUYELER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Üyeler</h2>
+
+<table class="table table-bordered">
+    <tr style="background-color: #DDA0DD">
+        <th>Üye ID Değeri</th>
+        <th>Adı</th>
+        <th>Soyadı</th>
+        <th>Okul Bilgisi</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var member in Model)
+    {
+        <tr>
+            <td>@member.ID</td>
+            <td>@member.AD</td>
+            <td>@member.SOYAD</td>
+            <td>@member.OKUL</td>
+            <td>
+                <a href="/Uye/UyeSil/@member.ID" class="btn btn-danger">Sil</a>
+                <a href="/Uye/UyeGetir/@member.ID" class="btn btn-warning">Güncelle</a>
+                <a href="/Uye/UyeAlınanKitap/@member.ID" class="btn btn-info">Önceden Alınan Kitaplar</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+@*sayfada belirli sayıda kayıt göstermek için kullanıcı tarafında görüntüleme işlemi*@
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+<a href="/Uye/YeniUyeEkle" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Üye </a>

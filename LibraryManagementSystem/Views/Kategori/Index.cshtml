@@ -1,0 +1,28 @@
+﻿@using LibraryManagementSystem.Models.Entity
+@model List<TBLKATEGORI>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Kategoriler</h2>
+
+<table class="table table-bordered">
+    <tr style="background-color: #DDA0DD">
+        <th>Kategori ID Değeri</th>
+        <th>Kategori Adı</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var kategori in Model)
+    {
+        <tr>
+            <td>@kategori.ID</td>
+            <td>@kategori.AD</td>
+            <td><a href="/Kategori/KategoriSil/@kategori.ID" class="btn btn-danger">Sil</a>
+            <a href="/Kategori/KategoriGetir/@kategori.ID" class="btn btn-info">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Kategori/YeniKategoriEkle" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Kategori </a>

@@ -1,0 +1,24 @@
+﻿@model LibraryManagementSystem.Models.Entity.TBLDUYURULAR
+
+@{
+    ViewBag.Title = "YeniDuyuruEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label style="margin-top:15px">Duyuru Kategorisi</label>
+        @Html.TextBoxFor(duyuru => duyuru.KATEGORI, new { @class = "form-control" })
+    </div>
+    <div>
+        <label style="margin-top:15px">Duyuru İçeriği</label>
+        @Html.TextBoxFor(duyuru => duyuru.ICERIK, new { @class = "form-control" })
+    </div>
+    <div>
+        <label style="margin-top:15px">Duyuru Tarihi</label>
+        @Html.TextBoxFor(duyuru => duyuru.TARIH, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Ekle</button>
+    </div>
+</form>

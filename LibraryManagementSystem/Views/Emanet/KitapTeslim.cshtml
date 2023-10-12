@@ -1,0 +1,43 @@
+﻿@model LibraryManagementSystem.Models.Entity.TBLHAREKET
+@{
+    ViewBag.Title = "KitapTeslim";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("TeslimGuncelle", "Emanet", FormMethod.Post))
+{
+
+    <div style="margin-top:15px" class="form-group">
+        <label>Hareket ID Değeri</label>
+        @Html.TextBoxFor(teslim => teslim.ID, new { @class = "form-control" })
+        <br />
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(teslim => teslim.TBLKITAP.AD, new { @class = "form-control" })
+        <br />
+        <label>Üye</label>
+        @Html.TextBoxFor(teslim => teslim.TBLUYELER.AD, new { @class = "form-control" })
+        <br />
+        <label>İlgili Personel</label>
+        @Html.TextBoxFor(teslim => teslim.TBLPERSONEL.PERSONEL, new { @class = "form-control" })
+        <br />
+        <label>Kitap Emanet Tarihi</label>
+        @Html.TextBoxFor(teslim => teslim.ALISTARIH, "{0: MM.dd.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Kitap Teslim Tarihi</label>
+        @Html.TextBoxFor(teslim => teslim.IADETARIH, "{0: MM.dd.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Üyenin Teslim Ettiği Tarih</label>
+        <input type="text" class="form-control" name="UYEGETIRTARIH" value="@DateTime.Now.ToShortDateString()" />
+        <br />
+        <label>Geç Teslim Edilen Gün Sayısı</label>
+        <input type="text" class="form-control" id="Gecinput" value="@ViewBag.deger" />
+    </div>
+    <div>
+        <button style="margin-top:10px" class="btn btn-success">
+            <i class="glyphicon glyphicon-ok"></i>
+                Teslim İşlemini Onayla
+        </button>
+    </div>
+}
+
+

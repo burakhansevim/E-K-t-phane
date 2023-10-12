@@ -1,0 +1,68 @@
+﻿@model LibraryManagementSystem.Models.Entity.TBLUYELER
+@{
+    ViewBag.Title = "YeniUyeEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<form class="form-group" method="post">
+    <div>
+        <label style="margin-top:15px">Üye Adı</label>
+
+        @*html helper ve method biçimli LINQ ile annotation olarak değere verdiğimiz uyarı mesajını kullanıcıya göstermek için*@
+        @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AD, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label style="margin-top:15px">Üye Soyadı</label>
+
+        @*html helper ve method biçimli LINQ ile annotation olarak değere verdiğimiz uyarı mesajını kullanıcıya göstermek için*@
+        @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SOYAD, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label style="margin-top:15px">Mail Adresi</label>
+
+        @*html helper ve method biçimli LINQ ile annotation olarak değere verdiğimiz uyarı mesajını kullanıcıya göstermek için*@
+        @Html.TextBoxFor(x => x.MAIL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MAIL, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label style="margin-top:15px">Kullanıcı Adı</label>
+
+        @*html helper ve method biçimli LINQ ile annotation olarak değere verdiğimiz uyarı mesajını kullanıcıya göstermek için*@
+        @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.KULLANICIADI, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label style="margin-top:15px">Şifresi</label>
+
+        @*html helper ve method biçimli LINQ ile annotation olarak değere verdiğimiz uyarı mesajını kullanıcıya göstermek için*@
+        @Html.TextBoxFor(x => x.SIFRE, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SIFRE, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label style="margin-top:15px">Fotoğraf Linki</label>
+
+        @*html helper ve method biçimli LINQ ile annotation olarak değere verdiğimiz uyarı mesajını kullanıcıya göstermek için*@
+        @Html.TextBoxFor(x => x.FOTOGRAF, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.FOTOGRAF, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label style="margin-top:15px">Telefon Bilgisi</label>
+
+        @*html helper ve method biçimli LINQ ile annotation olarak değere verdiğimiz uyarı mesajını kullanıcıya göstermek için*@
+        @Html.TextBoxFor(x => x.TELEFON, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.TELEFON, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label style="margin-top:15px">Okul Bilgisi</label>
+
+        @*html helper ve method biçimli LINQ ile annotation olarak değere verdiğimiz uyarı mesajını kullanıcıya göstermek için*@
+        @Html.TextBoxFor(x => x.OKUL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.OKUL, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Ekle</button>
+    </div>
+</form>

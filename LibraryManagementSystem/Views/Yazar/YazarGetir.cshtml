@@ -1,0 +1,29 @@
+﻿@model LibraryManagementSystem.Models.Entity.TBLYAZAR
+@{
+    ViewBag.Title = "YazarGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("YazarGuncelle", "Yazar", FormMethod.Post))
+{
+    <div style="margin-top:15px" class="form-group">
+        <div style="margin-top:15px">
+            <label>Yazar ID</label>
+            @Html.TextBoxFor(yazar => yazar.ID, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:15px">
+            <label>Yazar Adı</label>
+            @Html.TextBoxFor(yazar => yazar.AD, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:15px">
+            <label>Yazar Soyadı</label>
+            @Html.TextBoxFor(yazar => yazar.SOYAD, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:15px">
+            <label>Yazar Detay Bilgileri</label>
+            @Html.TextAreaFor(yazar => yazar.DETAY, new { @class = "form-control" })
+        </div>
+        <button style="margin-top:15px" class="btn btn-warning">Yazar Bilgilerini Güncelle</button>
+    </div>
+}
+

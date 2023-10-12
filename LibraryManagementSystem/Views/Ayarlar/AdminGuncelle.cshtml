@@ -1,0 +1,30 @@
+﻿@model LibraryManagementSystem.Models.Entity.TBLADMIN
+@{
+    ViewBag.Title = "AdminGuncelle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("AdminGuncelle", "Ayarlar", FormMethod.Post))
+{
+
+<div style="margin-top:15px" class="form-group">
+    @*@Html.LabelFor(kategori => kategori.ID)*@
+    <label>Admin ID Değeri</label>
+    @Html.TextBoxFor(admin => admin.ID, new { @class = "form-control" })
+    @*@Html.LabelFor(kategori => kategori.AD)*@
+    @*same as*@
+    <br />
+    <label>Kullanıcı Adı</label>
+    @Html.TextBoxFor(admin => admin.KULLANICIADI, new { @class = "form-control" })
+    <br />
+    <label>Şifre</label>
+    @Html.TextBoxFor(admin => admin.SIFRE, new { @class = "form-control" })
+    <br />
+    <label>Yetki</label>
+    @Html.TextBoxFor(admin => admin.YETKI, new { @class = "form-control" })
+</div>
+    <div>
+        <button style="margin-top:10px" class="btn btn-warning">Güncelle</button>
+    </div>
+}

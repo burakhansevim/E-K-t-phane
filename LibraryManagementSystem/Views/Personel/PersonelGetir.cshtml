@@ -1,0 +1,25 @@
+﻿@model LibraryManagementSystem.Models.Entity.TBLPERSONEL
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+
+    <div style="margin-top:15px" class="form-group">
+        @*@Html.LabelFor(kategori => kategori.ID)*@
+        <label>Personel ID Değeri</label>
+        @Html.TextBoxFor(personel => personel.ID, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(kategori => kategori.AD)*@
+        @*same as*@
+        <label>Personel Adı</label>
+        @Html.TextBoxFor(personel => personel.PERSONEL, new { @class = "form-control" })
+    </div>
+    <div>
+        <button style="margin-top:10px" class="btn btn-warning">Güncelle</button>
+    </div>
+}
+
+

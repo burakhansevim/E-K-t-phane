@@ -1,0 +1,51 @@
+﻿@model LibraryManagementSystem.Models.Entity.TBLKITAP
+@{
+    ViewBag.Title = "KitapGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("KitapGuncelle", "Kitap", FormMethod.Post))
+{
+    <div style="margin-top:15px" class="form-group">
+        <div style="margin-top:15px">
+            <label>Kitap ID</label>
+            @Html.TextBoxFor(kitap => kitap.ID, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:15px">
+            <label>Kitap Adı</label>
+            @Html.TextBoxFor(kitap => kitap.AD, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:15px">
+            <label>Kitap Kategorisi</label>
+            @*verileri dropdown listeye almak için*@
+            @Html.DropDownListFor(kitap => kitap.TBLKATEGORI.ID,
+            (List<SelectListItem>)ViewBag.valueFocused3, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:15px">
+            <label>Kitap Yazarı</label>
+            @*verileri dropdown listeye almak için*@
+            @Html.DropDownListFor(kitap => kitap.TBLYAZAR.ID,
+            (List<SelectListItem>)ViewBag.valueFocused4, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:15px">
+            <label>Basım Yılı</label>
+            @Html.TextBoxFor(kitap => kitap.BASIMYIL, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:15px">
+            <label>Yayınevi</label>
+            @Html.TextBoxFor(kitap => kitap.YAYINEVI, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:15px">
+            <label>Kitap Sayfa Sayısı</label>
+            @Html.TextBoxFor(kitap => kitap.SAYFA, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:15px">
+            <label>Kitap Görseli</label>
+            @Html.TextBoxFor(kitap => kitap.KITAPRESIM, new { @class = "form-control" })
+        </div>
+        <button style="margin-top:15px" class="btn btn-warning">Kitap Bilgilerini Güncelle</button>
+        <input type="hidden" name="Durum" value="True" />
+    </div>
+}
+
+

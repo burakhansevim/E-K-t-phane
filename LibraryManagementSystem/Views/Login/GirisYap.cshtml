@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <title>Kütüphane Yönetim Sistemi</title>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- /meta tags -->
+    <!-- custom style sheet -->
+    <link href="~/weblogin/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="~/web/img/favicon.png">
+    <!-- /custom style sheet -->
+    <!-- fontawesome css -->
+    <link href="~/weblogin/css/fontawesome-all.css" rel="stylesheet" />
+    <!-- /fontawesome css -->
+    <!-- google fonts-->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- /google fonts-->
+
+</head>
+
+<body>
+    <h1>Kitap Dünyasına Hoşgeldiniz</h1>
+    <div class=" w3l-login-form">
+        <h2>Kütüphane Yönetim Sistemi</h2>
+        @using (Html.BeginForm("GirisYap", "Login", FormMethod.Post))
+        {
+            <div class=" w3l-form-group">
+                @*<label>Kullanıcı Adı:</label>*@
+                <div class="group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="form-control" placeholder="Mail Adresi" required="required" name="MAIL" />
+                </div>
+            </div>
+            <div class=" w3l-form-group">
+                @*<label>Şifre:</label>*@
+                <div class="group">
+                    <i class="fas fa-unlock"></i>
+                    <input type="password" class="form-control" placeholder="Şifre" required="required" name="SIFRE" />
+                </div>
+            </div>
+            <div class="forgot">
+                <a href="#">Şifreni mi unuttun?</a>
+                <p><input type="checkbox"> Beni Hatırla</p>
+            </div>
+            <button type="submit">Üye Giriş</button>
+        }
+        <a href="/AdminLogin/Login"><button style="margin-top:15px; background-color:royalblue; color:white;" type="submit">  Admin Giriş </button></a>
+        <p class=" w3l-register-p">Bir Hesabın Yok Mu?<a href="/Register/Kaydol" class="register"> Hesap Oluştur</a></p>
+    </div>
+    <footer>
+        @*copyright 2023 | Tüm Hakları Saklıdır*@
+    </footer>
+</body>
+</html>

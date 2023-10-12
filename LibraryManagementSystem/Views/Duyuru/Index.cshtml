@@ -1,0 +1,50 @@
+﻿@using LibraryManagementSystem.Models.Entity;
+@model List<TBLDUYURULAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    string renk = "";
+}
+
+<h2>Duyurular</h2>
+
+<table class="table table-bordered">
+    <tr style="background-color: #DDA0DD">
+        <th>Duyuru ID Değeri</th>
+        <th>Kategori</th>
+        <th>Tarih</th>
+        <th>İçerik</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var duyuru in Model)
+    {
+        if (duyuru.KATEGORI == "diger")
+        {
+            renk = "bg-info text-white";
+        }
+        else if (duyuru.KATEGORI == "Yeni Kitaplar Hakkinda")
+        {
+            renk = "bg-warning text-white";
+        }
+        else if (duyuru.KATEGORI == "Iletisim Bilgileri Hakkinda")
+        {
+            renk = "bg-success text-white";
+        }
+        else if (duyuru.KATEGORI == "Kitap Gecikmesi Hakkinda")
+        {
+            renk = "bg-danger text-white";
+        }
+        <tr class="@renk">
+            <td>@duyuru.ID</td>
+            <td>@duyuru.KATEGORI</td>
+            <td>@Convert.ToDateTime(duyuru.TARIH).ToString("MM/dd/yyyy")</td>
+            <td>
+                <a href="/Duyuru/DuyuruSil/@duyuru.ID" class="btn btn-danger">Sil</a>
+            </td>
+            <td>
+                <a href="/Duyuru/DuyuruDetay/@duyuru.ID" class="btn btn-info">Detaylar ve İçerik</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Duyuru/YeniDuyuruEkle" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Duyuru </a>

@@ -1,0 +1,47 @@
+﻿@model LibraryManagementSystem.Models.Entity.TBLKITAP
+@{
+    ViewBag.Title = "YeniKitapEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    @*form tarafında post işlemi yapıldığında çalışır*@
+    <div>@*HTML Helper methodlarıyla ekleme işlemi*@</div>
+    <div style="margin-top:15px">
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(kitap => kitap.AD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap Kategorisi</label>
+        @*verileri dropdown listeye almak için*@
+        @Html.DropDownListFor(kitap => kitap.TBLKATEGORI.ID,
+        (List<SelectListItem>)ViewBag.valueFocused, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap Yazarı</label>
+        @*verileri dropdown listeye almak için*@
+        @Html.DropDownListFor(kitap => kitap.TBLYAZAR.ID,
+        (List<SelectListItem>)ViewBag.valueFocused2, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Basım Yılı</label>
+        @Html.TextBoxFor(kitap => kitap.BASIMYIL, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Yayınevi</label>
+        @Html.TextBoxFor(kitap => kitap.YAYINEVI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap Sayfa Sayısı</label>
+        @Html.TextBoxFor(kitap => kitap.SAYFA, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Ekle</button>
+    </div>
+    @*Durum Değeri için*@
+    @*<input type="hidden" name="Durum" value="True" />*@
+</form>
+
+
+
+

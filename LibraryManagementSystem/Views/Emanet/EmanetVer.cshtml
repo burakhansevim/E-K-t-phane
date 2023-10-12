@@ -1,0 +1,44 @@
+﻿@model LibraryManagementSystem.Models.Entity.TBLHAREKET
+@{
+    ViewBag.Title = "EmanetVer";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    @*form tarafında post işlemi yapıldığında çalışır*@
+    <div>@*HTML Helper methodlarıyla ekleme işlemi*@</div>
+    <div style="margin-top:15px">
+        <label>Üye ID Değeri</label>
+        @*@Html.TextBoxFor(member => member.UYE, new { @class = "form-control" })*@
+        @Html.DropDownListFor(member => member.TBLUYELER.ID, (List<SelectListItem>)ViewBag.viewValue1, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap ID Değeri</label>
+        @*@Html.TextBoxFor(member => member.KITAP, new { @class = "form-control" })*@
+        @Html.DropDownListFor(member => member.TBLKITAP.ID, (List<SelectListItem>)ViewBag.viewValue2, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Personel ID Değeri</label>
+        @*@Html.TextBoxFor(member => member.PERSONEL, new { @class = "form-control" })*@
+        @Html.DropDownListFor(member => member.TBLPERSONEL.ID, (List<SelectListItem>)ViewBag.viewValue3, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap Emanet Tarihi</label>
+        <input type="text" class="form-control" name="ALISTARIH" value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap Teslim Tarihi</label>
+        @*kitabı teslim etmek için 7 gün süre(deadline)*@
+        <input type="text" class="form-control" name="IADETARIH" value="@DateTime.Now.AddDays(7).ToShortDateString()" />
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-success" onMouseOver="this.style.color='white'">
+            <i class="glyphicon glyphicon-ok"></i>
+            Emanet İşlemini Onayla
+        </button>
+        <input type="hidden" value="false" name="ISLEMDURUM" />
+    </div>
+</form>
+
+

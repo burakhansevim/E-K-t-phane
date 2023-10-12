@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewBag.Title = "LinqKart";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Esteem Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //custom-theme -->
+    <link href="~/web3/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/web3/css/component.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/web3/css/export.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/web3/css/style_grid.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/web3/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- font-awesome-icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+<body>
+    <div class="clearfix"></div>
+    <ul class="ca-menu">
+        <li>
+            <a href="#">
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main">@ViewBag.viewValue1</h4>
+                    <h3 class="ca-sub">Kitap Sayısı</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-users-rectangle" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main one">@ViewBag.viewValue2</h4>
+                    <h3 class="ca-sub one">Üye Sayısı</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-turkish-lira-sign" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main two">@ViewBag.viewValue3</h4>
+                    <h3 class="ca-sub two">Kasadaki Tutar</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main three">@ViewBag.viewValue4</h4>
+                    <h3 class="ca-sub three">Emanet Verilen Kitaplar</h3>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    <ul class="ca-menu">
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main">@ViewBag.viewValue5</h4>
+                    <h3 class="ca-sub">Kategori Sayısı</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main one"></h4>
+                    <h3 class="ca-sub one">En Etkin Üye</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-book-tanakh" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main two"></h4>
+                    <h3 class="ca-sub two">En Çok Okunan Kitap</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-user-pen" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main three">@ViewBag.viewValue8</h4>
+                    <h3 class="ca-sub three">En Çok Kitabı Olan Yazar</h3>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    <ul class="ca-menu">
+        <li>
+            <a href="#">
+                <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main">@ViewBag.viewValue9</h4>
+                    <h3 class="ca-sub">En İyi Yayınevi</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main one"></h4>
+                    <h3 class="ca-sub one">En Başarılı Personel</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-square-envelope" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main two">@ViewBag.viewValue11</h4>
+                    <h3 class="ca-sub two">Toplam Mesaj Sayısı</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main three"></h4>
+                    <h3 class="ca-sub three">Bugün Emanet Verilen Kitaplar</h3>
+                </div>
+            </a>
+        </li>
+    </ul>
+</body>
+</html>

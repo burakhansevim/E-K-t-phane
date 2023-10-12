@@ -1,0 +1,31 @@
+﻿@using LibraryManagementSystem.Models.Entity
+@model List<TBLPERSONEL>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<h2>Personeller</h2>
+
+<table class="table table-bordered">
+    <tr style="background-color: #DDA0DD">
+        <th>Personel ID Değeri</th>
+        <th>Personel Adı</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var personel in Model)
+    {
+        <tr>
+            <td>@personel.ID</td>
+            <td>@personel.PERSONEL</td>
+            <td>
+                <a href="/Personel/PersonelSil/@personel.ID" class="btn btn-danger">Sil</a>
+                <a href="/Personel/PersonelGetir/@personel.ID" class="btn btn-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<a href="/Personel/YeniPersonelEkle" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Personel </a>
+

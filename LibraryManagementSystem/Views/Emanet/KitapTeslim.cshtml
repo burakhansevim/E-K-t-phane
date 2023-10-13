@@ -30,12 +30,12 @@
         <input type="text" class="form-control" name="UYEGETIRTARIH" value="@DateTime.Now.ToShortDateString()" />
         <br />
         <label>Geç Teslim Edilen Gün Sayısı</label>
-        <input type="text" class="form-control" id="Gecinput" value="@ViewBag.deger" />
+        <input type="text" readonly="readonly" class="form-control" value="@ViewBag.deger" />
     </div>
     <div>
         <button style="margin-top:10px" class="btn btn-success">
             <i class="glyphicon glyphicon-ok"></i>
-                Teslim İşlemini Onayla
+            Teslim İşlemini Onayla
         </button>
     </div>
 }

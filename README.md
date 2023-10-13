@@ -2,4 +2,4 @@ Asp.Net MVC ile bir kütüphanede gerçekleşen işlemler ve durumlarla ilgili k
 Admin hesabıyla sisteme giren kullanıcı kütüphanedeki kitap listesini, ilgili içerikleri, üyeler, üye işlemleri, kitap emanet işlemleri, istatistiksel grafikler ve değerlendirmeleri  görüntüyebilir.
 Sistem üzerinden admin bilgilerini ve şifre güncellemelerini yapabilir.
 User hesabıyla sisteme giren kullanıcı kendi profil bilgilerini görüntüleyebilir ve bilgileri güncelleyebilir, şifre değişikliği yapabilir.
-Ayrıca sol menü üzerinden farklı birçok sayfaya erişim sağlayabilir 
+Ayrıca sol menü üzerinden farklı birçok sayfaya erişim sağlanarak listelere ekleme-silme-güncelleme-detay görüntüleme ve düzenleme yapılabilir 
